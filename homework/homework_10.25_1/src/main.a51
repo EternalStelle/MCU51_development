@@ -1,0 +1,10 @@
+MOV R7, #08H
+MOV R0, #30H
+MOV DPTR, #2000H
+
+LOOP: MOVX A, @DPTR
+      MOV @R0, A
+      INC R0
+      INC DPTR
+      DJNZ R7, LOOP
+      SJMP $
