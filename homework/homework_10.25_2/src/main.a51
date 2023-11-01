@@ -1,0 +1,13 @@
+MOV R7, #30H
+MOV R0, #20H
+
+LOOP: MOV A, @R0
+      CJNE A, #0AAH, NEXT
+      MOV 01H, 51H
+      LJMP EXIT
+
+NEXT: INC R0
+      DJNZ R7, LOOP
+      MOV 00H, 51H
+
+EXIT: SJMP $
